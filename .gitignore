@@ -7,6 +7,9 @@
 # dependencies
 /node_modules
 
+# API Keys
+env-config.js
+
 # IDEs and editors
 /.idea
 .project

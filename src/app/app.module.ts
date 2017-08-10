@@ -14,8 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-     MaterialModule.forRoot()
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
