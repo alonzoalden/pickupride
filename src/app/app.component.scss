@@ -1,15 +1,10 @@
-ul {
-   list-style: none;
-}
-li {
-  display: inline;
-  font-size: 12px;
-  cursor: pointer;
-  &::after {
-    content: '|';
-    padding: 5px;
-  }
-  &:last-child::after {
-    content : '';
-  }
+/*Global style variables*/
+@import './style-variables.scss';
+
+/*Component styles*/
+@import "./header/header.component.scss";
+
+/*Global styles*/
+body {
+    font-family: 'Open Sans';
 }

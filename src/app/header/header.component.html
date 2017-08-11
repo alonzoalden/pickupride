@@ -1,0 +1,32 @@
+<div class="header">
+    <md-toolbar class="nav">
+        <button 
+            md-button 
+            routerLink="/">
+            Discover Rides
+        </button>
+
+        <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+            <button md-button routerLink="/products">Network</button>
+            <button md-button routerLink="/dashboard">Lead Ride</button>
+        </div>
+        <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+        <md-icon>menu</md-icon>
+        </button>
+
+        <!-- This fills the remaining space of the current row -->
+        <span class="fill-remaining-space"></span>
+
+        <button 
+                md-button 
+                routerLink="/">
+                USER NAME
+        </button>
+    </md-toolbar>
+
+    <md-menu x-position="before" #menu="mdMenu">
+        <button md-menu-item routerLink="/products">Network</button>
+        <button md-menu-item routerLink="/dashboard">Lead Ride</button>
+        <!--<button md-menu-item>Help</button>-->
+    </md-menu>
+</div>
