@@ -3,8 +3,23 @@
 
 /*Component styles*/
 @import "./header/header.component.scss";
+@import "./discover/discover.component.scss";
+@import "./discover/ride/ride.component.scss";
 
 /*Global styles*/
 body {
     font-family: 'Open Sans';
+}
+
+.material-icons.md-48.head-icon { 
+    font-size: 48px; 
+    margin-right: 12px;
+}
+
+.material-icons.md-48 { 
+    font-size: 48px; 
+}
+
+.material-icons.md-36 { 
+    font-size: 36px; 
 }
