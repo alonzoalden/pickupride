@@ -6,6 +6,11 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var session = require('express-session');
 var methods = require('methods');
+var mongoose = require('mongoose');
+var key = require('./env-config.js');
+
+//connect to MongoDB database
+mongoose.connect('mongodb://' + key.DB_USERNAME + ':' + key.DB_PASSWORD + '@ds027618.mlab.com:27618/pickup-ridematch');
 
 var app = express();
 
