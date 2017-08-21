@@ -9,7 +9,7 @@ var methods = require('methods');
 var mongoose = require('mongoose');
 var key = require('./env-config.js');
 
-//connect to MongoDB database
+//connect to MongoDB MLABS database
 mongoose.connect('mongodb://' + key.DB_USERNAME + ':' + key.DB_PASSWORD + '@ds027618.mlab.com:27618/pickup-ridematch');
 
 var app = express();

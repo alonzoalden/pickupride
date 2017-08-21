@@ -3,14 +3,15 @@
         <i class="material-icons md-48 head-icon">directions_bike</i>
 
         <button 
-            md-button 
+            md-button
+            disableRipple
             routerLink="/">
             Discover Rides
         </button>
 
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-            <button md-button routerLink="/network">Network</button>
-            <button md-button routerLink="/lead">Lead Ride</button>
+            <button md-button disableRipple routerLink="/network">Network</button>
+            <button md-button disableRipple routerLink="/lead">Lead Ride</button>
         </div>
         <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
             <md-icon>menu</md-icon>
@@ -18,14 +19,27 @@
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
-
-        <button 
-                md-button 
-                routerLink="/">
+        <div [hidden]="!loggedIn">
+            <button 
+                    md-button
+                    disableRipple
+                    routerLink="/">
+                    <i class="material-icons md-36">face</i>
+                    USER NAME
+                    <i class="material-icons">menu</i>
+            </button>
+        </div>
+        <div [hidden]="loggedIn">
+            <button 
+                md-button
+                disableRipple
+                routerLink="/"
+                (click)="login()">
                 <i class="material-icons md-36">face</i>
-                USER NAME
-                <i class="material-icons">menu</i>
-        </button>
+                SIGN IN
+            </button>
+        </div>
+
     </md-toolbar>
 
     <md-menu x-position="before" #menu="mdMenu">

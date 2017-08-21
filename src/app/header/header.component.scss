@@ -8,9 +8,13 @@
 
     .nav {
         min-height: 50px !important;
-        background: linear-gradient(90deg, $indigo1, $indigo-dark);
-        button:hover, button:focus  {
+        background-color: $indigo1;
+        button:hover {
             color: #FFE0B2;
+            background-color: disabled;
+        } 
+        button:focus  {
+            background-color: $indigo-dark;
         }
         color: $indigo-light;
     }
@@ -26,4 +30,8 @@
 
 md-toolbar md-toolbar-row {
   height: 50px !important;
+}
+
+md-button {
+
 }

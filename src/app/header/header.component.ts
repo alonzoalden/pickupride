@@ -8,4 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
+
+  loggedIn = false;
+
+  login() {
+    this.loggedIn = true;
+  } 
 }
