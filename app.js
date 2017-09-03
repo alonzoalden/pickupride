@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 var key = require('./env-config.js');
 
 //connect to MongoDB MLABS database
-mongoose.connect('mongodb://' + key.DB_USERNAME + ':' + key.DB_PASSWORD + '@ds027618.mlab.com:27618/pickup-ridematch');
+mongoose.connect('mongodb://' + key.DB_USERNAME + ':' + key.DB_PASSWORD + key.DB_URL);
 
 var app = express();
 
