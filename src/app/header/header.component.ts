@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { keys } from '../../../env-config';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+
+
 
 @Component({
   selector: 'header',
@@ -7,7 +10,8 @@ import { keys } from '../../../env-config';
 })
 
 export class HeaderComponent implements OnInit {
-
+  constructor() {
+  }
   ngOnInit() {
   }
 
@@ -19,6 +23,8 @@ export class HeaderComponent implements OnInit {
   } 
 
   stravaLogin() {   
-    window.location.href = "https://www.strava.com/oauth/authorize?client_id=" + keys.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" + keys.DEV_URL + "?scope=write&state=mystate&approval_prompt=force" ;
+    window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
+    + keys.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
+    + keys.DEV_URL + "?scope=write&state=mystate&approval_prompt=force" ;
   }
 }
