@@ -20,7 +20,7 @@
         "styles.scss"
       ],
       "scripts": [
-        "./env-config.js"
+        "../env-config.ts"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

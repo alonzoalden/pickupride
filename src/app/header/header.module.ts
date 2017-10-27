@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
-import { MdTabsModule } from '@angular/material';
-import { MdSidenavModule } from '@angular/material';
+import {MatToolbarModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
+import {MatMenuModule} from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,9 +18,9 @@ const headerRouting: ModuleWithProviders = RouterModule.forChild([
 @NgModule({
   imports: [
     headerRouting,
-    MaterialModule,
-    MdTabsModule,
-    MdSidenavModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatMenuModule,
     FlexLayoutModule,
     BrowserAnimationsModule
   ],

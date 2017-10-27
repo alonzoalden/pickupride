@@ -8,7 +8,7 @@
 /node_modules
 
 # API Keys
-env-config.js
+env-config
 
 # IDEs and editors
 /.idea

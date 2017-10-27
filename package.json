@@ -17,6 +17,7 @@
     "@angular/common": "^4.3.3",
     "@angular/compiler": "^4.3.3",
     "@angular/core": "^4.3.3",
+    "@angular/flex-layout": "^2.0.0-beta.9",
     "@angular/forms": "^4.3.3",
     "@angular/http": "^4.3.3",
     "@angular/material": "github:angular/material2-builds",

@@ -1,49 +1,49 @@
 <div class="header">
-    <md-toolbar class="nav">
-        <i class="material-icons md-48 head-icon">directions_bike</i>
+    <mat-toolbar class="nav">
+        <i class="material-icons mat-48 head-icon">directions_bike</i>
 
         <button 
-            md-button
+            mat-button
             disableRipple
             routerLink="/">
             Discover Rides
         </button>
 
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-            <button md-button disableRipple routerLink="/network">Network</button>
-            <button md-button disableRipple routerLink="/lead">Lead Ride</button>
+            <button mat-button disableRipple routerLink="/network">Network</button>
+            <button mat-button disableRipple routerLink="/lead">Lead Ride</button>
         </div>
-        <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-            <md-icon>menu</md-icon>
+        <button mat-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
+            <i class="material-icons">menu</i>
         </button>
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
         <div [hidden]="!loggedIn">
             <button 
-                    md-button
+                    mat-button
                     disableRipple
                     routerLink="/">
-                    <i class="material-icons md-36">face</i>
+                    <i class="material-icons mat-36">face</i>
                     USER NAME
                     <i class="material-icons">menu</i>
             </button>
         </div>
         <div [hidden]="loggedIn">
             <button 
-                md-button
+                mat-button
                 disableRipple
                 routerLink="/"
                 (click)="stravaLogin()">
-                <i class="material-icons md-36">face</i>
+                <i class="material-icons mat-36">face</i>
                 SIGN IN
             </button>
         </div>
 
-    </md-toolbar>
+    </mat-toolbar>
 
-    <md-menu x-position="before" #menu="mdMenu">
-        <button md-menu-item routerLink="/network">Network</button>
-        <button md-menu-item routerLink="/lead">Lead Ride</button>
-    </md-menu>
+    <mat-menu x-position="before" #menu="matMenu">
+        <button mat-menu-item routerLink="/network">Network</button>
+        <button mat-menu-item routerLink="/lead">Lead Ride</button>
+    </mat-menu>
 </div>
