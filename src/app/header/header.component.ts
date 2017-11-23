@@ -14,8 +14,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
         let code = params['code'];
+        if (code) {
+          //send code client_id and client_secret to strava to get access token and user information back
+          //save token
+          //use this token for all strava api requests
+        }
       });
-
   }
 
   loggedIn = false;
