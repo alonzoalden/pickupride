@@ -1,18 +1,21 @@
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { keys } from '../../../env-config';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
-
-
 @Component({
   selector: 'header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
 })
 
 export class HeaderComponent implements OnInit {
-  constructor() {
-  }
+  constructor(private activatedRoute: ActivatedRoute) {}
+
   ngOnInit() {
+    // this.activatedRoute.paramMap.subscribe((params: Params) => {
+    //     let code = params['code'];
+    //     console.log(code);
+    //   });
   }
 
   loggedIn = false;

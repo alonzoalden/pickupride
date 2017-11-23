@@ -1,12 +1,12 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 //import { MaterialModule } from '@angular/material';
-import {MatToolbarModule} from '@angular/material';
-import {MatMenuModule} from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
@@ -20,7 +20,13 @@ import { LoginComponent } from './login/login.component';
 
 import 'hammerjs';
 
-// const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: AppComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -32,7 +38,7 @@ import 'hammerjs';
   ],
   imports: [
     BrowserModule,
-    // rootRouting,
+    rootRouting,
     FormsModule,
     HttpModule,
     MatTabsModule,

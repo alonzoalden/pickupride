@@ -8,21 +8,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderComponent } from './header.component';
 
-const headerRouting: ModuleWithProviders = RouterModule.forChild([
-  {
-    path: ':code',
-    component: HeaderComponent,
-  }
-]);
+// const headerRouting: ModuleWithProviders = RouterModule.forChild([
+//   {
+//     path: ':code',
+//     component: HeaderComponent,
+//   }
+// ]);
 
 @NgModule({
   imports: [
-    headerRouting,
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule
   ],
   declarations: [
     HeaderComponent
