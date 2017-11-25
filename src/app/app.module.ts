@@ -19,7 +19,8 @@ import { LoginComponent } from './login/login.component';
 import 'hammerjs';
 import {
   ApiService,
-  JwtService
+  JwtService,
+  UserService
 } from './shared/services';
 
 
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     ApiService,
-    JwtService
+    JwtService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
