@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { MaterialModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
@@ -17,8 +16,13 @@ import { HeaderComponent } from './header/header.component';
 import { RideComponent } from './discover/ride/ride.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { LoginComponent } from './login/login.component';
-
 import 'hammerjs';
+import {
+  ApiService,
+  JwtService
+} from './shared/services';
+
+
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 const appRoutes: Routes = [
@@ -50,7 +54,10 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    JwtService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
