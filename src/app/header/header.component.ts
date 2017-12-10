@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit {
         let code = params['code'];
         if (code) {
           //send code client_id and client_secret to strava to get access token and user information back
-          //save token 
-          //use this token for all strava api requests
+          //save token using jwtService as a cookies/thing whatevz
+          //use this token for all strava api requests, attach as header in config.
           
         }
       });
