@@ -8,7 +8,10 @@ export const keys = {
   DB_USERNAME: 'defaultuser',
   DB_PASSWORD: 'defaultpassword',
   DB_URL: '@ds027618.mlab.com:27618/pickup-ridematch',
-  DEV_URL: 'http://localhost:4200/'
+  DEV_URL: 'http://localhost:4200/',
+  clientID: 'cjOusGP7dUPonYdjMeCpjxQE9iNTWTFE',
+  domain: 'alonzoalden.auth0.com',
+  callbackURL: 'http://localhost:4200'
 };
 
 // *This file contains private information, please make sure it is in your .gitignore file.*
