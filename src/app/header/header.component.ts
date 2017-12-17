@@ -2,6 +2,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { keys } from '../../../env-config';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'header',
@@ -9,7 +10,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 })
 
 export class HeaderComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, public auth: AuthService) {}
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {

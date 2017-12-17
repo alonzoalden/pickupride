@@ -20,7 +20,8 @@ import 'hammerjs';
 import {
   ApiService,
   JwtService,
-  UserService
+  UserService,
+  AuthService
 } from './shared/services';
 
 
@@ -58,7 +59,8 @@ const appRoutes: Routes = [
   providers: [
     ApiService,
     JwtService,
-    UserService
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
