@@ -24,13 +24,6 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  loggedIn = false;
-  
-
-  login() {
-    this.loggedIn = true;
-  } 
-
   stravaLogin() {   
     window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
     + keys.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { keys as AUTH_CONFIG } from '../../../../env-config';
 import { Router, NavigationStart } from '@angular/router';
+import { ApiService } from './api.service';
 import 'rxjs/add/operator/filter';
 import Auth0Lock from 'auth0-lock';
+
 
 @Injectable()
 export class AuthService {
@@ -20,7 +22,10 @@ export class AuthService {
     }
   });
 
-  constructor(public router: Router) {}
+  constructor(
+      public router: Router, 
+      private apiService: ApiService
+  ) {}
 
   public login(): void {
     this.lock.show();
@@ -33,6 +38,9 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         this.router.navigate(['/']);
+        //send info to back end
+        //backend calls getinfo and saves info into database. 
+
       }
     });
     this.lock.on('authorization_error', (err) => {
@@ -42,27 +50,9 @@ export class AuthService {
     });
   }
 
-  // Call this method in app.component.ts
-  // if using hash-based routing
-  public handleAuthenticationWithHash(): void {
-    this
-      .router
-      .events
-      .filter(event => event instanceof NavigationStart)
-      .filter((event: NavigationStart) => (/access_token|id_token|error/).test(event.url))
-      .subscribe(() => {
-        this.lock.resumeAuth(window.location.hash, (err, authResult) => {
-          if (err) {
-            this.router.navigate(['/']);
-            console.log(err);
-            alert(`Error: ${err.error}. Check the console for further details.`);
-            return;
-          }
-          this.setSession(authResult);
-          this.router.navigate(['/']);
-        });
-    });
-  }
+//   private getUserInfo(): Object {
+//     this.apiService.get(/)
+//   }
 
   private setSession(authResult): void {
     // Set the time that the access token will expire at
@@ -88,4 +78,7 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
+  public getToken(): String {
+    return window.localStorage['access_token'];
+  }
 }

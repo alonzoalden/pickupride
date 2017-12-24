@@ -19,17 +19,18 @@
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
-        <div [hidden]="!loggedIn">
+        <div [hidden]="!auth.isAuthenticated()">
             <button 
                     mat-button
                     disableRipple
-                    routerLink="/">
+                    routerLink="/"
+                    (click)="auth.logout()">
                     <i class="material-icons mat-36">face</i>
                     USER NAME
                     <i class="material-icons">menu</i>
             </button>
         </div>
-        <div [hidden]="loggedIn">
+        <div [hidden]="auth.isAuthenticated()">
             <button 
                 mat-button
                 disableRipple
