@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { keys as AUTH_CONFIG } from '../../../../env-config';
 import { Router, NavigationStart } from '@angular/router';
-import { ApiService } from './api.service';
+//import { ApiService } from './api.service';
+import { UserService } from './user.service';
 import 'rxjs/add/operator/filter';
 import Auth0Lock from 'auth0-lock';
 
@@ -24,7 +25,8 @@ export class AuthService {
 
   constructor(
       public router: Router, 
-      private apiService: ApiService
+      //private apiService: ApiService,
+      private userService: UserService
   ) {}
 
   public login(): void {
@@ -38,6 +40,7 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         this.router.navigate(['/']);
+        this.userService.populate();
         //send info to back end
         //backend calls getinfo and saves info into database. 
 
@@ -49,10 +52,6 @@ export class AuthService {
       alert(`Error: ${err.error}. Check the console for further details.`);
     });
   }
-
-//   private getUserInfo(): Object {
-//     this.apiService.get(/)
-//   }
 
   private setSession(authResult): void {
     // Set the time that the access token will expire at

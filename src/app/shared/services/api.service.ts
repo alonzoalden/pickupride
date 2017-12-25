@@ -3,7 +3,6 @@ import { environment } from '../../../environments/environment';
 import { Headers, Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { JwtService } from './jwt.service';
-import { AuthService } from './auth.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -11,8 +10,7 @@ import 'rxjs/add/operator/catch';
 export class ApiService {
   constructor(
     private http: Http,
-    private jwtService: JwtService,
-    private authService: AuthService
+    private jwtService: JwtService
   ) {}
 
   private setHeaders(): Headers {
@@ -22,8 +20,8 @@ export class ApiService {
     };
 
     // set headers here
-    if (this.authService.getToken()) {
-      headersConfig['Authorization'] = `Bearer ${this.authService.getToken()}`;
+    if (this.jwtService.getToken()) {
+      headersConfig['Authorization'] = `Bearer ${this.jwtService.getToken()}`;
     }
     return new Headers(headersConfig);
   }
