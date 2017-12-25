@@ -51,7 +51,7 @@
   },
   "defaults": {
     "build": {
-      "showCircularDependencies": false
+      "showCircularDependencies": true
     },
     "styleExt": "scss",
     "class": {
