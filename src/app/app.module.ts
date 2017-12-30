@@ -24,8 +24,6 @@ import {
   AuthService
 } from './shared/services';
 
-
-
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 const appRoutes: Routes = [
   {

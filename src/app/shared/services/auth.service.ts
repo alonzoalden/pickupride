@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { keys as AUTH_CONFIG } from '../../../../env-config';
-import { Router, NavigationStart } from '@angular/router';
+import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
 import { UserService } from './user.service';
