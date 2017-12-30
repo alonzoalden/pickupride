@@ -24,13 +24,22 @@ export class UserService {
     private jwtService: JwtService,
   ) {}
 
-  setUser(user: User) {
+  setAuth(user: User) {
     // Set current user data into observable
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
     this.isAuthenticatedSubject.next(true);
   }
 
+  purgeUser() {
+    // Remove JWT from localstorage
+    this.jwtService.destroyToken();
+    // Set current user to an empty object
+    this.currentUserSubject.next(new User());
+    // Set auth status to false
+    this.isAuthenticatedSubject.next(false);
+  }
+  
   getCurrentUser(): User {
     return this.currentUserSubject.value;
   }

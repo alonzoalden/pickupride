@@ -55,7 +55,9 @@ export class AuthService {
     });
   }
 
-  private populate() {
+  // Verify JWT in localstorage with server & load user's info.
+  // This runs once on application startup.
+  public populate() {
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
       this.apiService.get(`user/${this.jwtService.getAccessToken()}`)
@@ -84,6 +86,8 @@ export class AuthService {
     localStorage.removeItem('expires_at');
     // Go back to the home route
     this.router.navigate(['/']);
+    
+    this.userService.purgeUser();
   }
 
   public isAuthenticated(): boolean {
