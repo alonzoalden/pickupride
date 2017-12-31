@@ -16,6 +16,10 @@ export class AppComponent {
     private activatedRoute: ActivatedRoute,
   ) {
     auth.handleAuthentication();
+    console.log(auth.isAuthenticated());
+    if (auth.isAuthenticated()) {
+        auth.populate();
+    }
   }
 
   ngOnInit() {
@@ -23,9 +27,9 @@ export class AppComponent {
     this.activatedRoute.queryParams.subscribe(params => {
         let code = params['code'];
         if (code) {
-          window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
-          + keys.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
-          + keys.DEV_URL + "?scope=write&state=mystate&approval_prompt=force";
+          // window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
+          // + keys.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
+          // + keys.DEV_URL + "?scope=write&state=mystate&approval_prompt=force";
 
           //send code client_id and client_secret to back end
 

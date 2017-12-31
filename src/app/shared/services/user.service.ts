@@ -24,7 +24,7 @@ export class UserService {
     private jwtService: JwtService,
   ) {}
 
-  setAuth(user: User) {
+  setUser(user: User) {
     // Set current user data into observable
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
@@ -39,7 +39,7 @@ export class UserService {
     // Set auth status to false
     this.isAuthenticatedSubject.next(false);
   }
-  
+
   getCurrentUser(): User {
     return this.currentUserSubject.value;
   }
