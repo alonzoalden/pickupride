@@ -50,7 +50,6 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatButtonModule,
     MatMenuModule,
-    //MaterialModule,
     FlexLayoutModule,
     BrowserAnimationsModule
   ],

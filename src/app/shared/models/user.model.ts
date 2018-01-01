@@ -1,5 +1,6 @@
 export class User {
-  email: string;
+  authEmail: string;
+  stravaEmail: string;
   token: string;
   username: string;
 }

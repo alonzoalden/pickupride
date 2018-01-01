@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
+import { keys as AUTH_CONFIG } from '../../../../env-config';
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
 import { User } from '../models';
@@ -25,6 +25,12 @@ export class UserService {
   ) {}
 
   setUser(user: User) {
+    // If user does not have strava credentials, redirect to strava oauth page:
+    if (!user.stravaEmail) {
+      window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
+            + AUTH_CONFIG.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
+            + AUTH_CONFIG.DEV_URL + "?scope=write&state=mystate&approval_prompt=force";
+    }
     // Set current user data into observable
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
