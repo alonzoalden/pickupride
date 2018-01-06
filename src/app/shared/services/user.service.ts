@@ -24,17 +24,27 @@ export class UserService {
     private jwtService: JwtService,
   ) {}
 
+  createUser(code: String) {
+    this.apiService.post(`user/register`, {code: code})
+            .subscribe(
+                data => this.setUser(data.user),
+                err => console.log('err')
+            );
+  }
+
   setUser(user: User) {
     // If user does not have strava credentials, redirect to strava oauth page:
-    if (!user.stravaEmail) {
+    if (!user) {
       window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
             + AUTH_CONFIG.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
             + AUTH_CONFIG.DEV_URL + "?scope=write&state=mystate&approval_prompt=force";
+    } 
+    else {
+      // Set current user data into observable
+      this.currentUserSubject.next(user);
+      // Set isAuthenticated to true
+      this.isAuthenticatedSubject.next(true);
     }
-    // Set current user data into observable
-    this.currentUserSubject.next(user);
-    // Set isAuthenticated to true
-    this.isAuthenticatedSubject.next(true);
   }
 
   purgeUser() {

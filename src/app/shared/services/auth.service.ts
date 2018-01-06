@@ -19,7 +19,7 @@ export class AuthService {
       responseType: 'token id_token',
       audience: `https://${AUTH_CONFIG.domain}/userinfo`,
       params: {
-        scope: 'openid'
+        scope: 'openid email'
       }
     }
   });

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { keys } from '../../env-config';
 import { AuthService } from './shared/services/auth.service';
+import { UserService } from './shared/services/user.service';
+//import { ApiService } from './shared/services/api.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,25 +15,27 @@ export class AppComponent {
 
   constructor(
     public auth: AuthService,
+    public userService: UserService,
+    //public apiService: ApiService,
     private activatedRoute: ActivatedRoute,
-  ) {
-    auth.handleAuthentication();
-
-    if (auth.isAuthenticated()) {
-        auth.populate();
-    }
-  }
+  ) {}
 
   ngOnInit() {
-    //check to see if params are there.
     this.activatedRoute.queryParams.subscribe(params => {
         let code = params['code'];
         if (code) {
-          //send code client_id and client_secret to back end
-
+            //send code to back end
+            this.userService.createUser(code, this.auth.getToken());
           //on back end:
           //send code client_id and client_secret to strava to get access token and user information back
           //save into database along with auth0 id/email
+        }
+        else {
+            this.auth.handleAuthentication();
+
+            if (this.auth.isAuthenticated()) {
+                this.auth.populate();
+            }
         }
       });
   }
