@@ -21,9 +21,9 @@ export class AppComponent {
   ) {}
 
   ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(params => {
-        let code = params['code'];
-        if (code) {
+      this.activatedRoute.queryParams.subscribe(params => {
+          let code = params['code'];
+          if (code) {
             //send code to back end
             this.userService.createUser(code, this.auth.getToken());
           //on back end:
@@ -37,7 +37,7 @@ export class AppComponent {
                 this.auth.populate();
             }
         }
-      });
+     });
   }
 
 }

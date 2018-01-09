@@ -9,6 +9,8 @@ import { MatMenuModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
+
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatMenuModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     ApiService,

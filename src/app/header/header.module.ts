@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatMenuModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from '../app.component';
@@ -22,7 +23,8 @@ import { HeaderComponent } from './header.component';
     MatMenuModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     HeaderComponent

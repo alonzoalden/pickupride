@@ -1,6 +1,17 @@
 export class User {
-  authEmail: string;
-  stravaEmail: string;
-  token: string;
-  username: string;
+    access_token: string;
+    id: Number;
+    resource_state: Number;
+    firstname: String;
+    lastname: String;
+    profile_medium: String;
+    profile: String;
+    city: String;
+    state: String;
+    country: String;
+    sex: String;
+    premium: Boolean;
+    email: String;
+    created_at: String;
+    updated_at: String;
 }
