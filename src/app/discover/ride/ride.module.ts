@@ -6,7 +6,7 @@ import { MatMenuModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header.component';
+import { RideComponent } from './ride.component';
 
 // const headerRouting: ModuleWithProviders = RouterModule.forChild([
 //   {
@@ -26,7 +26,7 @@ import { HeaderComponent } from './header.component';
     MatProgressSpinnerModule
   ],
   declarations: [
-    HeaderComponent
+    RideComponent
   ]
 })
-export class HeaderModule {}
+export class RideModule {}

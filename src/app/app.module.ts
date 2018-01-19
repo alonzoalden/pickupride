@@ -9,8 +9,8 @@ import { MatMenuModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
-
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -27,12 +27,12 @@ import {
 } from './shared/services';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: AppComponent
-  }
-];
+// const appRoutes: Routes = [
+//   {
+//     path: '',
+//     component: AppComponent
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     MatTabsModule,
+    MatListModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,

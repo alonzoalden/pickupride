@@ -6,17 +6,18 @@ import { MatMenuModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header.component';
+import { DiscoverComponent } from './discover.component';
 
-// const headerRouting: ModuleWithProviders = RouterModule.forChild([
-//   {
-//     path: '?code',
-//     component: AppComponent,
-//   }
-// ]);
+const discoverRouting: ModuleWithProviders = RouterModule.forChild([
+  {
+    path: '',
+    component: DiscoverComponent,
+  }
+]);
 
 @NgModule({
   imports: [
+    discoverRouting,
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
@@ -26,7 +27,7 @@ import { HeaderComponent } from './header.component';
     MatProgressSpinnerModule
   ],
   declarations: [
-    HeaderComponent
+    DiscoverComponent
   ]
 })
-export class HeaderModule {}
+export class DiscoverModule {}

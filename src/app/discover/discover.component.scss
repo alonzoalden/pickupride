@@ -1,13 +1,17 @@
 .discover-container {
-    margin-top: 45px;
+    margin-top: 43px;
     border: 0px solid black;
     height: 80vh;
     right: 0;
     left: 0;
     position: absolute;
+    background-color: lightblue;
+    z-index: 1; 
     .ride-list {
-        border: 1px solid black;
-        width: 40%;
+        margin: 0px;
+        width: 30%;
         overflow: scroll;
+        border-radius: 3px;
+        box-shadow: 3px 3px 3px darkgray;
     }
 }

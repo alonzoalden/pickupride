@@ -1,2 +1,11 @@
 <header></header>
-<discover></discover>
+<!--<div [hidden]="!auth.isLoading">
+    <mat-progress-spinner
+        class="example-margin"
+        color="primary"
+        mode="indeterminate">
+    </mat-progress-spinner>
+</div>-->
+<router-outlet></router-outlet>
+<!--
+<discover [hidden]="auth.isLoading"></discover>-->

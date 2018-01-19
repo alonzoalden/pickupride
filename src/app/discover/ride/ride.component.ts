@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 export class RideComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
-    console.log('balls')
   }
 
 }

@@ -20,13 +20,23 @@
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
         <div [hidden]="!auth.isAuthenticated()">
+            <mat-menu #userMenu="matMenu">
+                <button mat-menu-item (click)="auth.logout()">Log Out</button>
+            </mat-menu>
+            
             <button
                     mat-button
                     disableRipple
-                    routerLink="/"
-                    (click)="auth.logout()">
-                    <i class="material-icons mat-36">face</i>
-                    {{ auth.isLoading ? "Loading..." : this.displayName()}}
+                    [matMenuTriggerFor]="userMenu">
+
+                    <span [hidden]="!this.currentUser.firstname">
+                        {{ this.currentUser.firstname + ' ' + this.currentUser.lastname }}
+                    </span>
+                    <span [hidden]="this.currentUser.firstname">
+                        Retreiving user...
+                    </span>
+                    <img src="https://dgalywyr863hv.cloudfront.net/pictures/athletes/929395/6812582/1/medium.jpg"
+                        class="circle">
                     <i class="material-icons">menu</i>
             </button>
             
