@@ -17,6 +17,7 @@ const discoverRouting: ModuleWithProviders = RouterModule.forChild([
 
 @NgModule({
   imports: [
+      asdfasdf
     discoverRouting,
     MatButtonModule,
     MatToolbarModule,

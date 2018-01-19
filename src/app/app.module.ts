@@ -27,12 +27,12 @@ import {
 } from './shared/services';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
-// const appRoutes: Routes = [
-//   {
-//     path: '',
-//     component: AppComponent
-//   }
-// ];
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: AppComponent
+  }
+];
 
 @NgModule({
   declarations: [
