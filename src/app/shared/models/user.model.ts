@@ -1,6 +1,6 @@
 export class User {
     access_token: string;
-    id: Number;
+    strava_id: Number;
     resource_state: Number;
     firstname: String;
     lastname: String;
@@ -14,4 +14,5 @@ export class User {
     email: String;
     created_at: String;
     updated_at: String;
+    _id: String;
 }

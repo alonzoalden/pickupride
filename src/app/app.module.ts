@@ -15,9 +15,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { RideComponent } from './discover/ride/ride.component';
-import { DiscoverComponent } from './discover/discover.component';
-import { LoginComponent } from './login/login.component';
+import { DiscoverModule } from './discover/discover.module';
+import { LeadModule } from './lead/lead.module';
+
 import 'hammerjs';
 import {
   ApiService,
@@ -27,28 +27,26 @@ import {
 } from './shared/services';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: AppComponent
-  }
-];
+// const appRoutes: Routes = [
+//   {
+//     path: '',
+//     component: AppComponent
+//   }
+// ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    RideComponent,
-    DiscoverComponent,
-    LoginComponent
+    HeaderComponent
   ],
   imports: [
+    DiscoverModule,
+    LeadModule,
     BrowserModule,
     rootRouting,
     FormsModule,
     HttpModule,
     MatTabsModule,
-    MatListModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,

@@ -34,6 +34,8 @@ export class UserService {
             );
   }
 
+  
+
   // // Update the user on the server (email, pass, etc)
   // update(user): Observable<User> {
   //   return this.apiService

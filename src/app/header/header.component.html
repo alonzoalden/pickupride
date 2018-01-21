@@ -16,6 +16,11 @@
         <button mat-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
             <i class="material-icons">menu</i>
         </button>
+        
+        <mat-menu x-position="before" #menu="matMenu">
+                <button mat-menu-item routerLink="/network">Network</button>
+                <button mat-menu-item routerLink="/lead">Lead Ride</button>
+        </mat-menu>
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
@@ -30,7 +35,7 @@
                     [matMenuTriggerFor]="userMenu">
 
                     <span [hidden]="!this.currentUser.firstname">
-                        {{ this.currentUser.firstname + ' ' + this.currentUser.lastname }}
+                        {{ this.currentUser.firstname }}
                     </span>
                     <span [hidden]="this.currentUser.firstname">
                         Retreiving user...
@@ -51,9 +56,5 @@
                 SIGN IN
             </button>
         </div>
-    </mat-toolbar>   
-    <mat-menu x-position="before" #menu="matMenu">
-        <button mat-menu-item routerLink="/network">Network</button>
-        <button mat-menu-item routerLink="/lead">Lead Ride</button>
-    </mat-menu>
+    </mat-toolbar>
 </div>
