@@ -50,7 +50,7 @@ export class AuthService {
     this.lock.on('authenticated', (authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-        //this.router.navigate(['/']);
+        this.router.navigate(['/']);
         this.populate();
         //send info to back end
         //backend calls getinfo and saves info into database. 
@@ -58,7 +58,7 @@ export class AuthService {
       }
     });
     this.lock.on('authorization_error', (err) => {
-      //this.router.navigate(['/']);
+      this.router.navigate(['/']);
       console.log(err);
       alert(`Error: ${err.error}. Check the console for further details.`);
     });
@@ -132,7 +132,6 @@ export class AuthService {
   }
 
   public getCurrentUser(): User {
-    console.log(this.currentUserSubject);
     return this.currentUserSubject.value;
   }
 

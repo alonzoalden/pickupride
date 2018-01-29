@@ -8,13 +8,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header.component';
 
-// const headerRouting: ModuleWithProviders = RouterModule.forChild([
-//   {
-//     path: '?code',
-//     component: AppComponent,
-//   }
-// ]);
-
 @NgModule({
   imports: [
     MatButtonModule,

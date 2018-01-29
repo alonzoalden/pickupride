@@ -14,9 +14,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
 
   constructor(
-    public auth: AuthService,
-    public userService: UserService,
-    //public apiService: ApiService,
+    private auth: AuthService,
+    private userService: UserService,
     private activatedRoute: ActivatedRoute,
   ) {}
 
@@ -24,11 +23,7 @@ export class AppComponent {
       this.activatedRoute.queryParams.subscribe(params => {
           let code = params['code'];
           if (code) {
-            //send code to back end
             this.userService.createUser(code, this.auth.getToken());
-          //on back end:
-          //send code client_id and client_secret to strava to get access token and user information back
-          //save into database along with auth0 id/email
         }
         else {
             this.auth.handleAuthentication();
@@ -39,5 +34,4 @@ export class AppComponent {
         }
      });
   }
-
 }

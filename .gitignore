@@ -8,6 +8,7 @@
 /node_modules
 
 # API Keys
+env-config.ts
 env-config
 
 # IDEs and editors

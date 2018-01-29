@@ -11,7 +11,8 @@ export const keys = {
   DEV_URL: 'http://localhost:4200/',
   clientID: 'cjOusGP7dUPonYdjMeCpjxQE9iNTWTFE',
   domain: 'alonzoalden.auth0.com',
-  callbackURL: 'http://localhost:4200'
+  callbackURL: 'http://localhost:4200',
+  MAPBOX_ACCESS_TOKEN: 'pk.eyJ1IjoiYWxvbnpvYWxkZW4iLCJhIjoiY2pjb3h0MWt1MWh5ajMzbnhmYTY5NnFuNiJ9.Fi9w3kwMVtAU2OZT5hmAAA'
 };
 
 // *This file contains private information, please make sure it is in your .gitignore file.*

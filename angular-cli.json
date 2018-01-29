@@ -1,6 +1,7 @@
 {
   "project": {
-    "name": "pickup"
+    "name": "pickup",
+    "ejected": true
   },
   "apps": [
     {
@@ -15,6 +16,7 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
+      "testTsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
         "styles.scss"
@@ -50,9 +52,6 @@
     }
   },
   "defaults": {
-    "build": {
-      "showCircularDependencies": true
-    },
     "styleExt": "scss",
     "class": {
       "spec": false
@@ -61,6 +60,9 @@
       "spec": true,
       "inlineStyle": false,
       "inlineTemplate": false
+    },
+    "build": {
+      "showCircularDependencies": true
     }
   }
 }
