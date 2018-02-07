@@ -1,4 +1,4 @@
-<div [hidden]="!auth.isLoading">
+<!--<div [hidden]="!auth.isLoading">
     <mat-progress-spinner
         class="example-margin"
         color="primary"
@@ -6,15 +6,24 @@
     </mat-progress-spinner>
 </div>
 
-<div [hidden]="auth.isLoading">
+<div [hidden]="auth.isLoading">-->
 <mat-sidenav-container class="discover-container">
   <mat-sidenav class="ride-list" opened="true" mode="side">
     <!-- sidenav content -->
-    <ride></ride>
+    <div [hidden]="auth.isLoading">
+        <ride></ride>
+    </div>
+    <div [hidden]="!auth.isLoading">
+        <mat-progress-spinner
+            class="example-margin center"
+            color="primary"
+            mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
   </mat-sidenav>
 
   <map></map>
   <!-- primary content -->
 </mat-sidenav-container>
-
-</div>
+<!--
+</div>-->

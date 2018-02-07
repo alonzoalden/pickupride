@@ -1,7 +1,6 @@
 .discover-container {
-    margin-top: 43px;
-    border: 0px solid black;
-    height: 80vh;
+    margin-top: 8vh;
+    height: 91vh;
     right: 0;
     left: 0;
     position: absolute;
@@ -9,10 +8,17 @@
     z-index: 1;
     font-family: 'Arvo';
     .ride-list {
-        margin: 0px;
-        width: 30%;
+        width: 35%;
         overflow: scroll;
         border-radius: 3px;
         box-shadow: 3px 3px 3px darkgray;
+        .center {
+            margin: 200px auto;
+        }
     }
+}
+mgl-map {
+    height: 100%;
+    width: 100%;
+    position: absoulute;
 }
