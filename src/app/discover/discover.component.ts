@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../shared/services/index';
 
 @Component({
   selector: 'discover',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DiscoverComponent implements OnInit {
 
   constructor(
+    private user: UserService
   ) { }
 
   ngOnInit() {

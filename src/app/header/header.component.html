@@ -24,9 +24,9 @@
 
         <!-- This fills the remaining space of the current row -->
         <span class="fill-remaining-space"></span>
-        <div [hidden]="!auth.isAuthenticated()">
+        <div [hidden]="!user.isAuthenticated()">
             <mat-menu #userMenu="matMenu">
-                <button mat-menu-item (click)="auth.logout()">Log Out</button>
+                <button mat-menu-item (click)="user.logout()">Log Out</button>
             </mat-menu>
             
             <button
@@ -40,18 +40,17 @@
                     <span [hidden]="this.currentUser.firstname">
                         Retreiving user...
                     </span>
-                    <img src="https://dgalywyr863hv.cloudfront.net/pictures/athletes/929395/6812582/1/medium.jpg"
-                        class="circle">
+					<img [hidden]="!this.currentUser.profile_medium" [src]="this.currentUser.profile_medium" class="circle">
                     <i class="material-icons">menu</i>
             </button>
             
         </div>
-        <div [hidden]="auth.isAuthenticated()">
+        <div [hidden]="user.isAuthenticated()">
             <button 
                 mat-button
                 disableRipple
                 routerLink="/"
-                (click)="auth.login()">
+                (click)="user.login()">
                 <i class="material-icons mat-36">face</i>
                 SIGN IN
             </button>
