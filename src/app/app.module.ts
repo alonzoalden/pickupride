@@ -17,15 +17,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DiscoverModule } from './discover/discover.module';
 import { LeadModule } from './lead/lead.module';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+//import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import { keys as AUTH_CONFIG } from '../../env-config';
 
 import 'hammerjs';
 import {
   ApiService,
   JwtService,
-  UserService,
-  AuthService
+  UserService
 } from './shared/services';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
@@ -55,8 +54,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
   providers: [
     ApiService,
     JwtService,
-    UserService,
-    AuthService
+    UserService
   ],
   bootstrap: [AppComponent]
 })

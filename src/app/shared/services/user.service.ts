@@ -29,7 +29,6 @@ export class UserService {
 	public currentUser = this.currentUserSubject.asObservable().distinctUntilChanged();
 
 	private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
-  //public isAuthenticated = this.isAuthenticatedSubject.asObservable();
 
 	constructor(
 		public router: Router, 
@@ -44,8 +43,8 @@ export class UserService {
 
 	public isLoading = false;
 
-  // Call this method in app.component.ts
-  // if using path-based routing
+	// Call this method in app.component.ts
+	// if using path-based routing
 	public handleAuthentication(): void {
 		this.lock.on('authenticated', (authResult) => {
 			if (authResult && authResult.accessToken && authResult.idToken) {
@@ -61,8 +60,16 @@ export class UserService {
 		});
 	}
 
-  // Verify JWT in localstorage with server & load user's info.
-  // This runs once on application startup.
+	private setSession(authResult): void {
+		// Set the time that the access token will expire at
+		const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+		localStorage.setItem('access_token', authResult.accessToken);
+		localStorage.setItem('id_token', authResult.idToken);
+		localStorage.setItem('expires_at', expiresAt);
+	}
+	
+	// Verify JWT in localstorage with server & load user's info.
+	// This runs once on application startup.
 	public populate() {
 		this.isLoading = true;
         // If JWT detected, attempt to get & store user's info
@@ -76,7 +83,7 @@ export class UserService {
         // Remove any potential remnants of previous auth states
             this.logout();
         }
-  }
+	}
   
 	public setUser(user: User) {
 		this.activatedRoute.queryParams.subscribe(params => {
@@ -99,24 +106,16 @@ export class UserService {
     	});
 	}
 
-	createUser(code: String, accessToken: String) {
+	public createUser(code: String, accessToken: String) {
 		const credentials = {
 			code: code,
 			accessToken: accessToken,
 		};
 		this.apiService.post(`user/register`, credentials)
             .subscribe(
-                data => this.authService.setUser(data.user),
+                data => this.setUser(data.user),
                 err => console.log('err:', err)
             );
-	}
-
-	private setSession(authResult): void {
-		// Set the time that the access token will expire at
-		const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-		localStorage.setItem('access_token', authResult.accessToken);
-		localStorage.setItem('id_token', authResult.idToken);
-		localStorage.setItem('expires_at', expiresAt);
 	}
 
 	public logout(): void {
@@ -142,9 +141,5 @@ export class UserService {
 
 	public getCurrentUser(): User {
 		return this.currentUserSubject.value;
-	}
-
-	public getToken(): String {
-		return window.localStorage['access_token'];
 	}
 }

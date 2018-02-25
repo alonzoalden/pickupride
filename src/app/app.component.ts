@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { keys } from '../../env-config';
-import { UserService } from './shared/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import {
+	UserService,
+	JwtService
+} from './shared/services/index';
 
 @Component({
 	selector: 'app-root',
@@ -12,8 +15,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
 
 	constructor(
-		private user: AuthService,
-		private userService: UserService,
+		private user: UserService,
+		private jwtService: JwtService,
 		private activatedRoute: ActivatedRoute,
 	) {}
 
@@ -21,7 +24,7 @@ export class AppComponent {
 		this.activatedRoute.queryParams.subscribe(params => {
 			let code = params['code'];
 			if (code) {
-				this.user.createUser(code, this.user.getToken());
+				this.user.createUser(code, this.jwtService.getAccessToken());
 			}
 			else {
 				this.user.handleAuthentication();
