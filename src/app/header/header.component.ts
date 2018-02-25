@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { AuthService } from '../shared/services/auth.service';
 import { UserService } from '../shared/services/user.service';
 import { User } from '../shared/models/user.model';
 
@@ -12,11 +11,10 @@ import { User } from '../shared/models/user.model';
 export class HeaderComponent implements OnInit {
     currentUser: User;
     constructor(
-        private auth: AuthService,
-        private userService: UserService
+        private user: UserService
     ) {}
     ngOnInit() {
-        this.auth.currentUser.subscribe(
+        this.user.currentUser.subscribe(
                 (userData: User) => {
                     this.currentUser = userData;
                 }

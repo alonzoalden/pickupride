@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'login',
@@ -9,7 +8,6 @@ import { AuthService } from '../shared/services/auth.service';
 export class LoginComponent implements OnInit {
 
   constructor(public auth: AuthService) {
-    //auth.handleAuthentication();
   }
 
   ngOnInit() {

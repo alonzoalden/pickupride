@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../shared/services/auth.service';
+import { UserService } from '../shared/services/user.service';
 import { ApiService } from '../shared/services/api.service';
 import { User } from '../shared/models/user.model';
 
@@ -11,19 +11,18 @@ import { User } from '../shared/models/user.model';
 export class LeadComponent implements OnInit {
     currentUser: User;
     constructor(
-        private auth: AuthService,
+        private user: UserService,
         private apiService: ApiService
     ) { }
 
     ngOnInit() {
-        this.auth.currentUser.subscribe(
+        this.user.currentUser.subscribe(
             (userData: User) => {
-                    console.log(userData);
-                    this.currentUser = userData;
-                    this.apiService.get(`user/routes/${this.currentUser._id}`)
-                        .subscribe((response)=> {
-                            console.log(response);
-                        })
+                this.currentUser = userData;
+                this.apiService.get(`user/routes/${this.currentUser._id}`)
+                    .subscribe((response)=> {
+                        console.log(response);
+                    })
                 }
         )
     }
