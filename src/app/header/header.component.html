@@ -30,18 +30,18 @@
             </mat-menu>
             
             <button
-                    mat-button
-                    disableRipple
-                    [matMenuTriggerFor]="userMenu">
+				mat-button
+				disableRipple
+				[matMenuTriggerFor]="userMenu">
 
-                    <span [hidden]="!this.currentUser.firstname">
-                        {{ this.currentUser.firstname }}
-                    </span>
-                    <span [hidden]="this.currentUser.firstname">
-                        Retreiving user...
-                    </span>
-					<img [hidden]="!this.currentUser.profile_medium" [src]="this.currentUser.profile_medium" class="circle">
-                    <i class="material-icons">menu</i>
+				<span [hidden]="!this.currentUser.firstname">
+					{{ this.currentUser.firstname }}
+				</span>
+				<span [hidden]="this.currentUser.firstname">
+					Retreiving user...
+				</span>
+				<img [hidden]="!this.currentUser.profile_medium" [src]="this.currentUser.profile_medium" class="circle">
+				<i class="material-icons">menu</i>
             </button>
             
         </div>

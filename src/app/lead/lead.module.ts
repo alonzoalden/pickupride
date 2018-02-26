@@ -9,6 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LeadComponent } from './lead.component';
+import { RouteComponent } from './route/route.component';
 
 const leadRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -31,7 +32,8 @@ const leadRouting: ModuleWithProviders = RouterModule.forChild([
     MatProgressSpinnerModule
   ],
   declarations: [
-    LeadComponent
+    LeadComponent,
+    RouteComponent
   ]
 })
 export class LeadModule {}

@@ -1,10 +1,10 @@
 .discover-container {
-    margin-top: 8vh;
-    height: 91vh;
+    margin-top: 6vh;
+    height: 93vh;
     right: 0;
     left: 0;
     position: absolute;
-    background-color: lightblue;
+    background-color: #f9f9f9;
     z-index: 1;
     font-family: 'Arvo';
     .ride-list {
@@ -15,6 +15,7 @@
         .center {
             margin: 200px auto;
         }
+        background-color: #f9f9f9;
     }
 }
 mgl-map {
