@@ -12,8 +12,9 @@ import {
 })
 
 export class RouteComponent implements OnInit {
-    routeData; 
 
+    routeData; 
+    
     constructor(
         private user: UserService,
         private routeService: RouteService
@@ -26,9 +27,9 @@ export class RouteComponent implements OnInit {
         )
 	}
 
-    private getSmallMap(encodedPolyline: String) {
-        return 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/pin-s-a+9ed4bd(-122.46589,37.77343),pin-s-b+000(-122.42816,37.75965),path-5+f44-0.7('
-        + encodedPolyline
+    private getSmallMap(encodedPolyline: string) {
+        return 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/path('
+        + encodeURIComponent(encodedPolyline)
         + ')/auto/140x90?access_token='
         + AUTH_CONFIG.MAPBOX_ACCESS_TOKEN;
     }
