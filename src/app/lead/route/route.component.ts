@@ -33,4 +33,11 @@ export class RouteComponent implements OnInit {
         + ')/auto/140x90?access_token='
         + AUTH_CONFIG.MAPBOX_ACCESS_TOKEN;
     }
+
+    private convertToMiles(meter: number) {
+        return (meter * 0.000621371).toFixed(1);
+    }
+    private convertToFeet(meter: number) {
+        return (meter * 3.28084).toFixed(0);
+    }
 }

@@ -6,6 +6,8 @@ import { MatMenuModule } from '@angular/material';
 import { MatListModule } from '@angular/material';
 import { MatSidenavModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LeadComponent } from './lead.component';
@@ -29,7 +31,9 @@ const leadRouting: ModuleWithProviders = RouterModule.forChild([
     MatSidenavModule,
     BrowserAnimationsModule,
     RouterModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatGridListModule,
+    MatCardModule
   ],
   declarations: [
     LeadComponent,

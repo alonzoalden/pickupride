@@ -1,11 +1,84 @@
-<div class="ride-container">
+<!--<div class="route-container">
     <mat-list>
         <mat-list-item *ngFor="let route of routeData.routes" class="font" style="height: 100px; box-shadow: 1px 2px 2px lightgrey">
             <h3 mat-line>{{ route.name }}</h3>
             <p mat-line>{{ route.description }} </p>
             <p mat-line><span class="color"> Creator:</span> {{ route.athlete.firstname }} {{ route.athlete.lastname }}</p>
-            <p mat-line><span class="color"> Date Created: </span> {{ route.created_at | date }}</p>
+            <p mat-line><span class="color"> Distance: </span> <strong>{{ convertToMiles(route.distance) }} </strong> miles</p>
+            <p mat-line><span class="color"> Elevation Gain: </span> <strong>{{ convertToFeet(route.elevation_gain) }} </strong> feet</p>
             <img [src]="this.getSmallMap(route.map.summary_polyline)">
         </mat-list-item>
     </mat-list>
-</div>
+</div>-->
+
+<mat-grid-list cols="4" rowHeight="2:3">
+		<mat-grid-tile>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Shiba Inu</mat-card-title>
+                    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+		<mat-grid-tile>1</mat-grid-tile>
+		<mat-grid-tile>2</mat-grid-tile>
+		<mat-grid-tile>3</mat-grid-tile>
+		<mat-grid-tile>4</mat-grid-tile>
+	</mat-grid-list>

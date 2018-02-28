@@ -1,3 +1,16 @@
 .leader-container {
-    background: blue;
+    background-color: #f9f9f9;
+    //top: 150px;
+    
+    .top-banner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-top: 70px;
+        padding-bottom: 8px;
+        padding-left: 30px;
+        color: #FFE0B2;
+        background-color: #3F51B5;
+    }
+
 }

@@ -4,14 +4,13 @@
 
         <button 
             mat-button
-            disableRipple
             routerLink="/">
             Discover Rides
         </button>
 
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-            <button mat-button disableRipple routerLink="/network">Network</button>
-            <button mat-button disableRipple routerLink="/lead">Lead Ride</button>
+            <button mat-button routerLink="/network">Network</button>
+            <button mat-button routerLink="/lead">Lead Ride</button>
         </div>
         <button mat-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
             <i class="material-icons">menu</i>
@@ -31,7 +30,6 @@
             
             <button
 				mat-button
-				disableRipple
 				[matMenuTriggerFor]="userMenu">
 
 				<span [hidden]="!this.currentUser.firstname">
@@ -48,7 +46,6 @@
         <div [hidden]="user.isAuthenticated()">
             <button 
                 mat-button
-                disableRipple
                 routerLink="/"
                 (click)="user.login()">
                 <i class="material-icons mat-36">face</i>
