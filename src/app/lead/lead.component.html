@@ -1,14 +1,21 @@
-<div [hidden]="!user.isLoading">
-    <mat-progress-spinner
-        class="example-margin"
-        color="primary"
-        mode="indeterminate">
-    </mat-progress-spinner>
-</div>
 
 <div class="leader-container">
 	<div class="top-banner">
-		<h4>Lead Ride</h4>
+		<h4>{{ this.routes.getSelectedRoute().id ? 'Ride Details' : 'Lead Ride' }}</h4>
 	</div>
-	<route></route>
+	<div [hidden]="!user.isLoading">
+		<mat-progress-spinner
+			class="spinner"
+			color="primary"
+			mode="indeterminate">
+	    </mat-progress-spinner>
+	</div>
+
+	<route [hidden]="this.routes.getSelectedRoute().id"></route>
+
+	<div [hidden]="!this.routes.getSelectedRoute().id" class="route-form">
+		FORM GOES HERE!sdfsdf
+		<span (click)="this.routeListView()">BACK</span>
+	</div>
+"https://api.mapbox.com/v4/mapbox.light/zoomwheel,zoompan,geocoder,share.html?access_token=your-access-token"
 </div>

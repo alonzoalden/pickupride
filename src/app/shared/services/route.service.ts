@@ -16,6 +16,9 @@ export class RouteService {
 	private currentRoutesSubject = new BehaviorSubject<Route>(new Route());
 	public currentRoutes = this.currentRoutesSubject.asObservable().distinctUntilChanged();
 
+	public selectedRouteSubject = new BehaviorSubject<Route>(new Route());
+	public selectedRoute = this.selectedRouteSubject.asObservable().distinctUntilChanged();
+
 	constructor(
 		public router: Router,
 		private activatedRoute: ActivatedRoute,
@@ -34,5 +37,10 @@ export class RouteService {
 
 	public getCurrentLeaderRoutes(): Route {
 		return this.currentRoutesSubject.value;
+	}
+
+	public getSelectedRoute(): Route {
+		console.log(this.selectedRouteSubject.value);
+		return this.selectedRouteSubject.value;
 	}
 }

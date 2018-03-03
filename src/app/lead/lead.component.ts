@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/models/user.model';
+import { User, Route } from '../shared/models/index';
 
 import {
     UserService,
@@ -13,6 +13,7 @@ import {
 })
 export class LeadComponent implements OnInit {
     currentUser: User;
+    currentRoute: Route;
     constructor(
         private user: UserService,
         private routes: RouteService
@@ -25,6 +26,15 @@ export class LeadComponent implements OnInit {
                 this.routes.getLeaderRoutes();
             }
         )
+        this.routes.currentRoutes.subscribe(
+            (routeData: Route) => {
+                this.currentRoute = routeData;
+            }
+        )
+    }
+
+    routeListView() {
+        this.routes.selectedRouteSubject.next(new Route());
     }
 
 }

@@ -4,6 +4,7 @@ import {
     UserService,
     RouteService
 } from '../../shared/services/index';
+import { Route } from '../../shared/models/index';
 
 @Component({
 	selector: 'route',
@@ -27,10 +28,13 @@ export class RouteComponent implements OnInit {
         )
 	}
 
+    private selectRoute(route: Route) {
+        this.routeService.selectedRouteSubject.next(route);
+    }
     private getSmallMap(encodedPolyline: string) {
         return 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/path('
         + encodeURIComponent(encodedPolyline)
-        + ')/auto/140x90?access_token='
+        + ')/auto/300x250?access_token='
         + AUTH_CONFIG.MAPBOX_ACCESS_TOKEN;
     }
 

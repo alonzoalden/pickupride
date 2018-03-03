@@ -5,9 +5,10 @@ export class Route {
         firstname: String;
         lastname: String;
         created_at: String;
+        profile_medium: String;
     }
     created_at: String;
-    description: String;
+    description: string;
     distance: Number;
     elevation_gain: Number;
     estimated_moving_time: Number;
@@ -18,12 +19,12 @@ export class Route {
         resource_state: Number;
         polyline: [Number, Number][];
     }
-name: String;
-'private': Boolean;
-resource_state: Number;
-starred: Boolean;
-sub_type: Number;
-timestamp: Number;
-type: Number;
-updated_at: String;
+    name: String;
+    'private': Boolean;
+    resource_state: Number;
+    starred: Boolean;
+    sub_type: Number;
+    timestamp: Number;
+    type: Number;
+    updated_at: String;
 }

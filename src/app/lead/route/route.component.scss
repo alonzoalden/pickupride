@@ -12,16 +12,32 @@
     margin-top: 10px;
 }
 mat-grid-tile {
-        background: lightblue;
-        left: 0;
-        right: 0;
-        top: 140px;
+    left: 0;
+    right: 0;
+    top: 150px;
+    :hover {
+        background-color: #FFE0B2;
+        transition: 0.2s;
+    }
 }
-.example-card {
-  max-width: 400px;
+.example-header-image {
+    background-size: cover;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.leadRoutesList {
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 150px;
+    //width: 30%;
+    height: 40%;
+    :hover {
+        background-color: #FFE0B2;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+}
+mat-card {
+    margin-bottom: 10px;
 }
