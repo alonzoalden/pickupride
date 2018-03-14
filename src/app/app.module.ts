@@ -8,8 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DiscoverModule } from './discover/discover.module';
+import { MapboxModule } from './map/map-box.module';
 import { LeadModule } from './lead/lead.module';
 import { keys as AUTH_CONFIG } from '../../env-config';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
 import {
 	MatToolbarModule,
 	MatMenuModule,
@@ -36,6 +38,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		HeaderComponent
 	],
 	imports: [
+		MapboxModule,
 		DiscoverModule,
 		LeadModule,
 		BrowserModule,
@@ -49,7 +52,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		MatMenuModule,
 		FlexLayoutModule,
 		BrowserAnimationsModule,
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
 	],
 	providers: [
 		ApiService,

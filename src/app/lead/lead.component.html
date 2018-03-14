@@ -1,8 +1,9 @@
-
 <div class="leader-container">
+	
 	<div class="top-banner">
-		<h4>{{ this.routes.getSelectedRoute().id ? 'Ride Details' : 'Lead Ride' }}</h4>
+		<h2>Select a Route</h2>
 	</div>
+
 	<div [hidden]="!user.isLoading">
 		<mat-progress-spinner
 			class="spinner"
@@ -10,12 +11,11 @@
 			mode="indeterminate">
 	    </mat-progress-spinner>
 	</div>
-
-	<route [hidden]="this.routes.getSelectedRoute().id"></route>
-
-	<div [hidden]="!this.routes.getSelectedRoute().id" class="route-form">
-		FORM GOES HERE!sdfsdf
+	<route></route>
+	<!--<route [hidden]="this.routes.getSelectedRoute().id"></route>-->
+	
+	<!--<div [hidden]="!this.routes.getSelectedRoute().id" class="route-form">
+		<map class="t"></map><br><br><br><br><br><br><br>
 		<span (click)="this.routeListView()">BACK</span>
-	</div>
-"https://api.mapbox.com/v4/mapbox.light/zoomwheel,zoompan,geocoder,share.html?access_token=your-access-token"
+	</div>-->
 </div>

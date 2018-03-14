@@ -10,9 +10,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DiscoverComponent } from './discover.component';
 import { RideComponent } from './ride/ride.component';
-import { MapBoxComponent } from '../map/map-box.component';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-import { keys as AUTH_CONFIG } from '../../../env-config';
+import { MapboxModule } from '../map/map-box.module';
+//import { MapBoxComponent } from '../map/map-box.component';
+// import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+// import { keys as AUTH_CONFIG } from '../../../env-config';
 
 const discoverRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -24,6 +25,7 @@ const discoverRouting: ModuleWithProviders = RouterModule.forChild([
 @NgModule({
   imports: [
     discoverRouting,
+    MapboxModule,
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
@@ -33,14 +35,13 @@ const discoverRouting: ModuleWithProviders = RouterModule.forChild([
     BrowserAnimationsModule,
     RouterModule,
     MatProgressSpinnerModule,
-    NgxMapboxGLModule.forRoot({
-      accessToken: AUTH_CONFIG.MAPBOX_ACCESS_TOKEN
-    })
+    // NgxMapboxGLModule.forRoot({
+    //   accessToken: AUTH_CONFIG.MAPBOX_ACCESS_TOKEN
+    // })
   ],
   declarations: [
     DiscoverComponent,
-    RideComponent,
-    MapBoxComponent
+    RideComponent
   ]
 })
 export class DiscoverModule {}

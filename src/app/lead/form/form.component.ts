@@ -8,17 +8,16 @@ import {
 import { Route } from '../../shared/models/index';
 
 @Component({
-	selector: 'route',
-	templateUrl: './route.component.html',
-    styleUrls: ['./route.component.scss']
+	selector: 'form',
+	templateUrl: './form.component.html',
+    styleUrls: ['./form.component.scss']
 })
 
-export class RouteComponent implements OnInit {
+export class FormComponent implements OnInit {
 
     routeData; 
     
     constructor(
-        public router: Router,
         private user: UserService,
         private routeService: RouteService
     ) { }
@@ -32,7 +31,6 @@ export class RouteComponent implements OnInit {
 
     private selectRoute(route: Route) {
         this.routeService.selectedRouteSubject.next(route);
-        this.router.navigate(['/lead/details']);
     }
     private getSmallMap(encodedPolyline: string) {
         return 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/path('

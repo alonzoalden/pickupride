@@ -1,24 +1,22 @@
 .leader-container {
     background-color: #f9f9f9;
-    //top: 150px;
+    margin-top: 6vh;
+    height: 93vh;
     
     .top-banner {
         position: absolute;
         left: 0;
         right: 0;
-        padding-top: 70px;
+        padding-top: 30px;
         padding-bottom: 8px;
         padding-left: 30px;
-        color: #FFE0B2;
-        background-color: #3F51B5;
+        color: #3F51B5;
+        //background-color: #C5CAE9;
     }
     .spinner {
-        position: absolute;
         top: 50%;
         left: 47%;
     }
-    .route-form {
-        padding-top: 200px;
-    }
+    
 
 }

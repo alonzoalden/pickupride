@@ -31,7 +31,7 @@ export class UserService {
 	private isAuthenticatedSubject = new ReplaySubject<boolean>(1);
 
 	constructor(
-		public router: Router, 
+		public router: Router,
 		private apiService: ApiService,
 		private jwtService: JwtService,
 		private activatedRoute: ActivatedRoute
