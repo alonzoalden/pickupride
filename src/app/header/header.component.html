@@ -32,10 +32,10 @@
 				mat-button
 				[matMenuTriggerFor]="userMenu">
 
-				<span [hidden]="!this.currentUser.firstname">
-					{{ this.currentUser.firstname }}
+				<span [hidden]="!this.currentUser">
+					{{ this.currentUser ? this.currentUser.firstname : 'hi' }}
 				</span>
-				<span [hidden]="this.currentUser.firstname">
+				<span [hidden]="this.currentUser">
 					Retreiving user...
 				</span>
 				<img [hidden]="!this.currentUser.profile_medium" [src]="this.currentUser.profile_medium" class="circle">

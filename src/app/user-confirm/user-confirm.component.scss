@@ -1,0 +1,10 @@
+.confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .box {
+        text-align: center;
+        vertical-align: middle;
+    }
+}

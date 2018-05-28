@@ -19,7 +19,8 @@ import {
 	MatTabsModule,
 	MatSidenavModule,
 	MatListModule,
-	MatProgressSpinnerModule
+	MatProgressSpinnerModule,
+	MatDialogModule,
 } from '@angular/material';
 
 import 'hammerjs';
@@ -29,13 +30,15 @@ import {
 	UserService,
 	RouteService
 } from './shared/services';
+import { UserConfirmComponent } from './user-confirm/user-confirm.component';
 
 const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		HeaderComponent
+		HeaderComponent,
+		UserConfirmComponent
 	],
 	imports: [
 		MapboxModule,
@@ -50,6 +53,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		MatSidenavModule,
 		MatButtonModule,
 		MatMenuModule,
+		MatDialogModule,
 		FlexLayoutModule,
 		BrowserAnimationsModule,
 		MatProgressSpinnerModule,
@@ -60,6 +64,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		UserService,
 		RouteService
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	entryComponents: [UserConfirmComponent]
 })
 export class AppModule { }

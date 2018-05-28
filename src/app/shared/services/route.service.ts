@@ -40,7 +40,6 @@ export class RouteService {
 	}
 
 	public getSelectedRoute(): Route {
-		console.log(this.selectedRouteSubject.value);
 		return this.selectedRouteSubject.value;
 	}
 }

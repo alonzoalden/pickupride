@@ -11,9 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DiscoverComponent } from './discover.component';
 import { RideComponent } from './ride/ride.component';
 import { MapboxModule } from '../map/map-box.module';
-//import { MapBoxComponent } from '../map/map-box.component';
-// import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
-// import { keys as AUTH_CONFIG } from '../../../env-config';
 
 const discoverRouting: ModuleWithProviders = RouterModule.forChild([
   {
@@ -34,10 +31,7 @@ const discoverRouting: ModuleWithProviders = RouterModule.forChild([
     MatSidenavModule,
     BrowserAnimationsModule,
     RouterModule,
-    MatProgressSpinnerModule,
-    // NgxMapboxGLModule.forRoot({
-    //   accessToken: AUTH_CONFIG.MAPBOX_ACCESS_TOKEN
-    // })
+    MatProgressSpinnerModule
   ],
   declarations: [
     DiscoverComponent,

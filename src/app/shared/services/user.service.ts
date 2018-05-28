@@ -8,10 +8,11 @@ import Auth0Lock from 'auth0-lock';
 import { User } from '../models';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { UserConfirmComponent } from '../../user-confirm/user-confirm.component';
 @Injectable()
 export class UserService {
-
+	
 	lock = new Auth0Lock(AUTH_CONFIG.clientID, AUTH_CONFIG.domain, {
 		oidcConformant: true,
 		autoclose: true,
@@ -34,7 +35,8 @@ export class UserService {
 		public router: Router,
 		private apiService: ApiService,
 		private jwtService: JwtService,
-		private activatedRoute: ActivatedRoute
+		private activatedRoute: ActivatedRoute,
+		private dialog: MatDialog
 	) {}
 
 	public login(): void {
@@ -84,16 +86,33 @@ export class UserService {
             this.logout();
         }
 	}
-  
+    
+	public getAuthEmail() {
+		this.apiService.get(`user/authEmail/${this.jwtService.getAccessToken()}`)
+            .subscribe(
+                data => this.setUser(data.user),
+                err => console.log('err')
+            );
+	}
+
+	public openDialog(): void {
+		let dialogRef = this.dialog.open(UserConfirmComponent, {
+		width: '350px',
+		height: '400px'
+		});
+
+		dialogRef.afterClosed().subscribe(result => {
+			this.getAuthEmail();     
+		});
+  	}
+
 	public setUser(user: User) {
 		this.activatedRoute.queryParams.subscribe(params => {
 			let code = params['code'];
 
 			if (this.isAuthenticated()) {
 				if (!code && !user) {
-					window.location.href = "https://www.strava.com/oauth/authorize?client_id=" 
-					+ AUTH_CONFIG.STRAVA_CLIENT_ID + "&response_type=code&redirect_uri=" 
-					+ AUTH_CONFIG.DEV_URL + "?scope=write&state=mystate&approval_prompt=force";
+					this.openDialog();
 				}
 				else {
 					// Set current user data into observable
@@ -124,7 +143,7 @@ export class UserService {
 		localStorage.removeItem('id_token');
 		localStorage.removeItem('expires_at');
 		// Go back to the home route
-		//this.router.navigate(['/']);
+		this.router.navigate(['/']);
 
 		// Set current user to an empty object
 		this.currentUserSubject.next(new User());
