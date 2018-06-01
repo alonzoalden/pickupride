@@ -15,6 +15,10 @@ import { RouteComponent } from './route/route.component';
 import { MapboxModule } from '../map/map-box.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSelectModule} from '@angular/material/select';
+import { UnderConstructionComponent } from './form/under-construction.component';
 const leadRouting: ModuleWithProviders = RouterModule.forChild([
 	{
 		path: 'lead',
@@ -37,17 +41,22 @@ const leadRouting: ModuleWithProviders = RouterModule.forChild([
 		MatListModule,
 		FlexLayoutModule,
 		MatSidenavModule,
+		MatSlideToggleModule,
 		BrowserAnimationsModule,
 		RouterModule,
 		MatProgressSpinnerModule,
 		MatCardModule,
 		MatFormFieldModule,
-		MatInputModule
+		MatInputModule,
+		MatTooltipModule,
+		MatSelectModule
 	],
 	declarations: [
 		LeadComponent,
 		RouteComponent,
-		FormComponent
-	]
+		FormComponent,
+		UnderConstructionComponent
+	],
+	entryComponents: [UnderConstructionComponent]
 })
 export class LeadModule {}

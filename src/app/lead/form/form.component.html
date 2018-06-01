@@ -1,24 +1,51 @@
 <div class="route-form">
-	
-	<div class="top-banner">
+	<map class="map-form"></map>
+    <div class="form">
+        <div class="top-banner">
 		<h2>Enter Ride Details</h2>
 	</div>
-    
-    <map class="map-form">
-    </map>
-    <div class="form">
-        <mat-form-field>
-            <input matInput placeholder="Input">
-        </mat-form-field>
+        <div style="display: flex; justify-content: center">
+            <mat-form-field class="item" style="width: 100%; flex-grow: 1">
+                <textarea matInput placeholder="Share any comments about your ride here... "></textarea>
+            </mat-form-field>
+        </div>
 
-        <mat-form-field>
-            <textarea matInput placeholder="Textarea"></textarea>
-        </mat-form-field>
         
-
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="Favorite food" value="Sushi">
-        </mat-form-field>
+        <div class="item" style="display: flex; justify-content: space-between">
+            <mat-select placeholder="Ride Type"
+                matTooltip="Choose Ride Type"
+                matTooltipPosition="left"
+                style="width: 50%">
+                <mat-option *ngFor="let ride of rideTypes" [value]="ride">
+                    {{ ride }}
+                </mat-option>
+            </mat-select>
+            <mat-slide-toggle
+                [color]="colorPrivate"
+                [checked]="private"
+                matTooltip="Enable Private Mode?"
+                matTooltipPosition="left"
+                >
+                Private
+            </mat-slide-toggle>
+            <mat-slide-toggle
+                class="item"
+                [color]="color"
+                [checked]="checked"
+                disabled="true"
+                matTooltip="Enable Invite Only?"
+                matTooltipPosition="left"
+                (click)="this.inviteOnlyWarning()"
+                >
+                Invite Only 
+            </mat-slide-toggle>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 20px">
+            
+            <button mat-raised-button color="warn" style="margin-right: 20px">BACK</button>
+            <button mat-raised-button color="primary">SAVE</button>
+            
+        </div>
     </div>
 
 </div>

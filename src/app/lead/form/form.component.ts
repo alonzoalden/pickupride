@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { keys as AUTH_CONFIG } from '../../../../env-config';
+import { MatDialog } from '@angular/material';
 import {
     UserService,
     RouteService
 } from '../../shared/services/index';
 import { Route } from '../../shared/models/index';
+import { UnderConstructionComponent } from './under-construction.component';
 
 @Component({
 	selector: 'form',
@@ -16,10 +18,13 @@ import { Route } from '../../shared/models/index';
 export class FormComponent implements OnInit {
 
     routeData; 
-    
+    checked = false;
+    private rideTypes = ['Adventure', 'Workout', 'Race']
+
     constructor(
         private user: UserService,
-        private routeService: RouteService
+        private routeService: RouteService,
+        private dialog: MatDialog
     ) { }
   
 	ngOnInit() {
@@ -28,6 +33,12 @@ export class FormComponent implements OnInit {
             err => console.log('error retrieving leader routes', err)
         )
 	}
+    private inviteOnlyWarning() {
+		let dialogRef = this.dialog.open(UnderConstructionComponent, {
+		width: '300px',
+		height: '100px'
+		});
+    }
 
     private selectRoute(route: Route) {
         this.routeService.selectedRouteSubject.next(route);
