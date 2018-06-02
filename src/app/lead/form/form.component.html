@@ -1,50 +1,66 @@
 <div class="route-form">
 	<map class="map-form"></map>
-    <div class="form">
-        <div class="top-banner">
-		<h2>Enter Ride Details</h2>
-	</div>
-        <div style="display: flex; justify-content: center">
-            <mat-form-field class="item" style="width: 100%; flex-grow: 1">
-                <textarea matInput placeholder="Share any comments about your ride here... "></textarea>
-            </mat-form-field>
-        </div>
 
-        
-        <div class="item" style="display: flex; justify-content: space-between">
-            <mat-select placeholder="Ride Type"
-                matTooltip="Choose Ride Type"
-                matTooltipPosition="left"
-                style="width: 50%">
-                <mat-option *ngFor="let ride of rideTypes" [value]="ride">
-                    {{ ride }}
-                </mat-option>
-            </mat-select>
-            <mat-slide-toggle
-                [color]="colorPrivate"
-                [checked]="private"
-                matTooltip="Enable Private Mode?"
-                matTooltipPosition="left"
-                >
-                Private
-            </mat-slide-toggle>
-            <mat-slide-toggle
-                class="item"
-                [color]="color"
-                [checked]="checked"
-                disabled="true"
-                matTooltip="Enable Invite Only?"
-                matTooltipPosition="left"
-                (click)="this.inviteOnlyWarning()"
-                >
-                Invite Only 
-            </mat-slide-toggle>
+
+
+    <div class="body-form">
+        <div class="stats">
+            balls
         </div>
-        <div style="display: flex; justify-content: flex-end; margin-top: 20px">
-            
-            <button mat-raised-button color="warn" style="margin-right: 20px">BACK</button>
-            <button mat-raised-button color="primary">SAVE</button>
-            
+        <mat-divider [vertical]="true"></mat-divider>
+        <div class="form">
+        
+            <mat-toolbar-row class="top-banner">
+                <h2>Enter Ride Details</h2>
+                <span style="flex: 1 1 auto"></span>
+            </mat-toolbar-row>
+            <!--<mat-card-header>
+                <span>Enter Ride Details</span>
+                <span style="flex: 1 1 auto"></span>
+                <i class="material-icons mat-32 head-icon">cancel</i>
+            </mat-card-header>-->
+                <div class="details">
+                    <div style="display: flex">
+                        <mat-form-field class="item" style="flex-grow: 1">
+                            <textarea matInput placeholder="Share any comments about your ride here... "></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div class="item" style="display: flex; justify-content: space-between">
+                        <mat-select placeholder="Ride Type"
+                            matTooltip="Choose Ride Type"
+                            matTooltipPosition="left"
+                            style="width: 50%">
+                            <mat-option *ngFor="let ride of rideTypes" [value]="ride">
+                                {{ ride }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-slide-toggle
+                            [color]="colorPrivate"
+                            [checked]="private"
+                            matTooltip="Enable Private Mode?"
+                            matTooltipPosition="left"
+                            >
+                            Private
+                        </mat-slide-toggle>
+                        <mat-slide-toggle
+                            class="item"
+                            [color]="color"
+                            [checked]="checked"
+                            disabled="true"
+                            matTooltip="Enable Invite Only?"
+                            matTooltipPosition="left"
+                            (click)="this.inviteOnlyWarning()"
+                            >
+                            Invite Only 
+                        </mat-slide-toggle>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-right: 20px">
+                    
+                    <!--<button mat-raised-button color="warn" style="margin-right: 20px">CANCEL</button>-->
+                    <button mat-raised-button color="primary">SAVE</button>
+                    
+                </div>
         </div>
     </div>
 

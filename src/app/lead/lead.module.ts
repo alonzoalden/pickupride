@@ -19,6 +19,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import { UnderConstructionComponent } from './form/under-construction.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 const leadRouting: ModuleWithProviders = RouterModule.forChild([
 	{
 		path: 'lead',
@@ -49,7 +51,8 @@ const leadRouting: ModuleWithProviders = RouterModule.forChild([
 		MatFormFieldModule,
 		MatInputModule,
 		MatTooltipModule,
-		MatSelectModule
+		MatSelectModule,
+		MatDividerModule
 	],
 	declarations: [
 		LeadComponent,

@@ -6,11 +6,7 @@
     right: 0;
 
     .top-banner {
-        //padding-top: 30px;
-        padding-bottom: 8px;
-        padding-left: 30px;
         color: #3F51B5;
-        //background-color: #3F51B5;
     }
     .map-form {
         position: absolute;
@@ -18,18 +14,40 @@
         right: 0;
         height: 33vh;
     }
-    .form {
-        position: relative;
-        //background-color: skyblue;
-        height: 100%;
-        //display: flex;
-        flex-direction: column;
-        //justify-content: space-evenly;
-        margin: 0 auto;
-        margin-top: 40vh;
-        width: 50%;
-        .item {
-            margin-bottom: 20px;
+
+    .body-form {
+        display: flex;
+        flex-direction: row;
+        margin-top: 33vh;
+
+        /* This aligns it to the bottom */
+        position: absolute;
+        bottom: 0;
+        top: 0px;
+        /* -----------------------------*/
+
+        .stats {
+            width: 30%;
+            flex-grow: 1;
+            //border: 1px solid black;
+
+        }
+    
+        .form {
+            margin: 0 auto;
+            flex-grow: 1;
+            width: 50%;
+
+            .details {
+                //border: 1px solid black;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .item {
+                margin-bottom: 20px;
+            }
         }
     }
 }
