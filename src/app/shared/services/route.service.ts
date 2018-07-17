@@ -29,7 +29,7 @@ export class RouteService {
 	public getLeaderRoutes() {
 		if (this.user.getCurrentUser()._id) {
 			this.apiService.get(`user/routes/${this.user.getCurrentUser()._id}`)
-				.subscribe((routes)=> {
+				.subscribe((routes: Route)=> {
 					this.currentRoutesSubject.next(routes);
 				})
 		}

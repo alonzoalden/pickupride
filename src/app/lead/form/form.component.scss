@@ -29,15 +29,17 @@
         .stats {
             width: 30%;
             flex-grow: 1;
+            margin: auto;
+            text-align: center;
             //border: 1px solid black;
 
         }
     
         .form {
-            margin: 0 auto;
+            margin: auto;
             flex-grow: 1;
             width: 50%;
-
+            padding: 30px;
             .details {
                 //border: 1px solid black;
                 padding: 20px;

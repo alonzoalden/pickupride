@@ -5,7 +5,7 @@ import {
     UserService,
     RouteService
 } from '../../shared/services/index';
-import { Route } from '../../shared/models/index';
+import { Route, RouteItem } from '../../shared/models/index';
 
 @Component({
 	selector: 'route',
@@ -15,7 +15,9 @@ import { Route } from '../../shared/models/index';
 
 export class RouteComponent implements OnInit {
 
-    routeData; 
+    routeData = {
+        routes: new Array<RouteItem>(),
+    };
     
     constructor(
         public router: Router,
@@ -24,8 +26,17 @@ export class RouteComponent implements OnInit {
     ) { }
   
 	ngOnInit() {
+        this.routeData.routes.length = 10;
+        console.log(this.routeData.routes);
         this.routeService.currentRoutes.subscribe(
-            data => this.routeData = data,
+            data => {
+                //this.routeData.routes = data.routes;
+                if (data.routes) {
+                    data.routes.forEach( (item, i) => {
+                        this.routeData.routes[i] = item;
+                    });
+                }
+            },
             err => console.log('error retrieving leader routes', err)
         )
 	}
@@ -41,6 +52,10 @@ export class RouteComponent implements OnInit {
         + AUTH_CONFIG.MAPBOX_ACCESS_TOKEN;
     }
 
+
+    private isLoaded() {
+        console.log('BALLZ');
+    }
     private convertToMiles(meter: number) {
         return (meter * 0.000621371).toFixed(1);
     }

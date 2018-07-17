@@ -28,10 +28,17 @@ export class FormComponent implements OnInit {
     ) { }
   
 	ngOnInit() {
-        this.routeService.currentRoutes.subscribe(
-            data => this.routeData = data,
-            err => console.log('error retrieving leader routes', err)
-        )
+        // this.routeService.currentRoutes.subscribe(
+        //     data => this.routeData = data,
+        //     err => console.log('error retrieving leader routes', err)
+        // );
+        this.routeService.selectedRoute.subscribe(
+            data => {
+                this.routeData = data;
+                console.log(data);
+            },
+            err => console.log('error retrieving selected route', err)
+        );
 	}
     private inviteOnlyWarning() {
 		let dialogRef = this.dialog.open(UnderConstructionComponent, {
