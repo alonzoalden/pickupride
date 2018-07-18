@@ -19,6 +19,8 @@ export class FormComponent implements OnInit {
 
     routeData; 
     checked = false;
+    distance
+    elevation
     private rideTypes = ['Adventure', 'Workout', 'Race']
 
     constructor(
@@ -35,7 +37,8 @@ export class FormComponent implements OnInit {
         this.routeService.selectedRoute.subscribe(
             data => {
                 this.routeData = data;
-                console.log(data);
+                this.distance = this.convertToMiles(this.routeData.distance);
+                this.elevation = this.convertToFeet(this.routeData.elevation_gain);
             },
             err => console.log('error retrieving selected route', err)
         );

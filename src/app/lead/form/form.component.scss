@@ -31,7 +31,24 @@
             flex-grow: 1;
             margin: auto;
             text-align: center;
-            //border: 1px solid black;
+            flex-direction: column;
+            margin-top: 60px;
+            .stat {
+                margin-bottom: 50px;
+                display: flex;
+                justify-content: space-between;
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            .giant {
+                font-size: 200%;
+            }
+            .nongiant {
+                font-size: 25%;
+            }
+            .stat-title {
+                margin-top: 10px;
+            }
 
         }
     

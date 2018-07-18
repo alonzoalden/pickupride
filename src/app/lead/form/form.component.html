@@ -1,14 +1,26 @@
 <div class="route-form">
 	<map class="map-form"></map>
 
-
-
     <div class="body-form">
         <div class="stats">
-            <h2>balls</h2>
-            {{routeData.distance}}
-            {{routeData.elevation}}
-            {{routeData.name}}
+            
+            <div class="stat">
+                <span class="stat-title">distance</span>
+                <span class="giant">{{distance}}
+                    <span class="nongiant">miles</span>
+                </span>
+            </div>
+            <div class="stat">
+                <span class="stat-title">elevation</span>
+                <span class="giant">{{elevation}}
+                    <span class="nongiant">feet</span>
+                </span>
+            </div>
+
+            <div class="stat">
+                <span class="stat-title">name</span>
+                <span class="stat-title">{{routeData.name}}</span>
+            </div>
         </div>
         <mat-divider [vertical]="true"></mat-divider>
         <div class="form">
