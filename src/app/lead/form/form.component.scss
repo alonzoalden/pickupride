@@ -10,15 +10,10 @@
 .content {
     margin-top: 6vh;
     height: 92vh;
-    // padding-left: 9.5%;
-    // padding-right: 9.5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-
 }
 .content .statview {
     margin-top: 50px;
-    //position: absolute;
 }
 .content .form {
     position: absolute;
@@ -26,11 +21,8 @@
     
     margin: auto;
     right: 10%;
-    left: 10%;
-    
-    
+    left: 10%;   
 }
-   
 
 .content .form .inner-form {
     display: flex;
@@ -40,49 +32,4 @@
 }
 .top-banner {
     background-color: lightblue;
-    
 }
-
-// mat-input-container:not(.md-input-invalid) .mat-slide-toggle .md-input {
-//     border-color: blue;
-// }
-
-//     .body-form {
-//         display: flex;
-//         flex-direction: row;
-//         margin-top: 33vh;
-
-//         /* This aligns it to the bottom */
-//         position: absolute;
-//         bottom: 0;
-//         top: 0px;
-//         /* -----------------------------*/
-
-//         .stats {
-//             width: 30%;
-//             flex-grow: 1;
-//             margin: auto;
-//             text-align: center;
-//             flex-direction: column;
-//             margin-top: 60px;
-//             .stat {
-//                 margin-bottom: 50px;
-//                 display: flex;
-//                 justify-content: space-between;
-//                 padding-left: 20%;
-//                 padding-right: 20%;
-//             }
-//             .giant {
-//                 font-size: 200%;
-//             }
-//             .nongiant {
-//                 font-size: 25%;
-//             }
-//             .stat-title {
-//                 margin-top: 10px;
-//             }
-
-//         }
- 
-//     }
-// }
