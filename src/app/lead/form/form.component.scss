@@ -1,72 +1,40 @@
-.route-form {
-    margin-top: 6vh;
-    height: 93vh;
+.map-form {
     position: absolute;
-    left: 0;
-    right: 0;
+    display: inline-block;
+    //left: 10%;
+    //right: 70%;
+    width: 500px;
+    height: 92vh;
+    margin-top: 10px;
+}
 
-    .top-banner {
-        color: #3F51B5;
-    }
-    .map-form {
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 33vh;
-    }
-
-    .body-form {
-        display: flex;
-        flex-direction: row;
-        margin-top: 33vh;
-
-        /* This aligns it to the bottom */
-        position: absolute;
-        bottom: 0;
-        top: 0px;
-        /* -----------------------------*/
-
-        .stats {
-            width: 30%;
-            flex-grow: 1;
-            margin: auto;
-            text-align: center;
-            flex-direction: column;
-            margin-top: 60px;
-            .stat {
-                margin-bottom: 50px;
-                display: flex;
-                justify-content: space-between;
-                padding-left: 20%;
-                padding-right: 20%;
-            }
-            .giant {
-                font-size: 200%;
-            }
-            .nongiant {
-                font-size: 25%;
-            }
-            .stat-title {
-                margin-top: 10px;
-            }
-
-        }
+.content {
+    margin-top: 10px;
+    height: 92vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+}
+.content .statview {
+    margin-top: 60px;
+}
+.content .form {
+    position: absolute;
+    //top: calc(100% - 50%);
     
-        .form {
-            margin: auto;
-            flex-grow: 1;
-            width: 50%;
-            padding: 30px;
-            .details {
-                //border: 1px solid black;
-                padding: 20px;
-                display: flex;
-                flex-direction: column;
-            }
+    //margin: auto;
+    margin-top: 55px;
+    right: 0%;
+    left: 506px;
+    height: 60vh;
+}
 
-            .item {
-                margin-bottom: 20px;
-            }
-        }
-    }
+.content .form .inner-form {
+    display: flex;
+    flex-direction: column;
+    //border: 1px solid lightgrey;
+    padding: 30px;
+    height: 48vh;
+}
+.content .form .top-banner {
+    background-color: lightblue;
 }

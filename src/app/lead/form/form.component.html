@@ -1,84 +1,43 @@
-<div class="route-form">
-	<map class="map-form"></map>
-
-    <div class="body-form">
-        <div class="stats">
+<map class="map-form"></map>
+<div class="content">
+    <!-- <div class=statview>
+            <h1>{{routeData.name}}</h1>
+    </div> -->
+    <div class="form">
             
-            <div class="stat">
-                <span class="stat-title">distance</span>
-                <span class="giant">{{distance}}
-                    <span class="nongiant">miles</span>
-                </span>
-            </div>
-            <div class="stat">
-                <span class="stat-title">elevation</span>
-                <span class="giant">{{elevation}}
-                    <span class="nongiant">feet</span>
-                </span>
-            </div>
+        <mat-toolbar-row class="top-banner">
+            <h2>Enter Ride Details</h2>
+            <span style="flex: 1 1 auto"></span>
+        </mat-toolbar-row>
+        <div class="inner-form">
+            <mat-slide-toggle
+                [color]="colorPrivate"
+                [checked]="private"
+                matTooltip="Enable Private Mode?"
+                matTooltipPosition="left"
+                >
+                Private
+            </mat-slide-toggle>
+            <mat-form-field style="margin-top: 10px">
+                <mat-select placeholder="Select Ride Type"
+                    matTooltip="Choose Ride Type"
+                    matTooltipPosition="left">
+                    <mat-option *ngFor="let ride of rideTypes" [value]="ride">
+                        {{ ride }}
+                    </mat-option>
+                </mat-select>
+                <mat-label> Select Type</mat-label>
+            </mat-form-field>
 
-            <div class="stat">
-                <span class="stat-title">name</span>
-                <span class="stat-title">{{routeData.name}}</span>
+            <mat-form-field>
+                <textarea matInput placeholder="Share any comments... "></textarea>
+            </mat-form-field>
+
+            <div style="display: flex; justify-content: flex-end; margin-right: 20px">                
+                <button mat-raised-button color="warn" style="margin-right: 20px">CANCEL</button>
+                <button mat-raised-button color="primary">SAVE</button>
             </div>
-        </div>
-        <mat-divider [vertical]="true"></mat-divider>
-        <div class="form">
-        
-            <mat-toolbar-row class="top-banner">
-                <h2>Enter Ride Details</h2>
-                <span style="flex: 1 1 auto"></span>
-            </mat-toolbar-row>
-            <!--<mat-card-header>
-                <span>Enter Ride Details</span>
-                <span style="flex: 1 1 auto"></span>
-                <i class="material-icons mat-32 head-icon">cancel</i>
-            </mat-card-header>-->
-                <div class="details">
-                    <div class="" style="display: flex; justify-content: space-between">
-                        <mat-select placeholder="Select Ride Type"
-                            matTooltip="Choose Ride Type"
-                            matTooltipPosition="left"
-                            style="width: 70%">
-                            <mat-option *ngFor="let ride of rideTypes" [value]="ride">
-                                {{ ride }}
-                            </mat-option>
-                        </mat-select>
-                        <mat-slide-toggle
-                            [color]="colorPrivate"
-                            [checked]="private"
-                            matTooltip="Enable Private Mode?"
-                            matTooltipPosition="left"
-                            >
-                            Private
-                        </mat-slide-toggle>
-                        <!--<mat-slide-toggle
-                            class="item"
-                            [color]="color"
-                            [checked]="checked"
-                            disabled="true"
-                            matTooltip="Enable Invite Only?"
-                            matTooltipPosition="left"
-                            (click)="this.inviteOnlyWarning()"
-                            >
-                            Invite Only 
-                        </mat-slide-toggle>-->
-                        
-                    </div>
-                    <div style="display: flex">
-                        <mat-form-field class="" style="flex-grow: 1">
-                            <textarea matInput placeholder="Share any comments about your ride here... "></textarea>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: center; margin-right: 20px">
-                    
-                    <!--<button mat-raised-button color="warn" style="margin-right: 20px">CANCEL</button>-->
-                    <button mat-raised-button color="primary">SAVE</button>
-                    
-                </div>
         </div>
     </div>
-
+    
 </div>
-
