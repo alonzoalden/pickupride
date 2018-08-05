@@ -10,8 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { DiscoverModule } from './discover/discover.module';
 import { MapboxModule } from './map/map-box.module';
 import { LeadModule } from './lead/lead.module';
-import { keys as AUTH_CONFIG } from '../../env-config';
-import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+import { CoreModule } from './core/core.module';
+
 import {
 	MatToolbarModule,
 	MatMenuModule,
@@ -41,6 +41,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		UserConfirmComponent
 	],
 	imports: [
+		CoreModule,
 		MapboxModule,
 		DiscoverModule,
 		LeadModule,
@@ -56,7 +57,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([]);
 		MatDialogModule,
 		FlexLayoutModule,
 		BrowserAnimationsModule,
-		MatProgressSpinnerModule,
+		MatProgressSpinnerModule
 	],
 	providers: [
 		ApiService,
